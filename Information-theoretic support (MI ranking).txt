@@ -1,0 +1,18 @@
+==============================
+F) Information-theoretic support (MI ranking)
+==============================
+             feature        mi
+7   visibility_score  0.551127
+3   angular_size_deg  0.178383
+1       font_size_pt  0.104309
+2     text_height_mm  0.101382
+11     contrast_high  0.067939
+4       head_yaw_deg  0.039910
+13   contrast_medium  0.032562
+10  medium_projector  0.027520
+8     medium_monitor  0.023686
+9       medium_paper  0.004863
+12      contrast_low  0.004732
+0         distance_m  0.000000
+5     head_pitch_deg  0.000000
+6      head_roll_deg  0.000000

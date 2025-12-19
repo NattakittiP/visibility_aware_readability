@@ -1,0 +1,4 @@
+==============================
+E) Conformal prediction (coverage-guaranteed sets)
+==============================
+{'alpha': 0.1, 'qhat': 0.26216546494138304, 'coverage': 0.9166666666666666, 'avg_set_size': 1.0666666666666667, 'singleton_rate': 0.9333333333333333, 'n_test': 60, 'n_test_participants': 4}
