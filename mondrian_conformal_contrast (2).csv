@@ -1,0 +1,4 @@
+group_col,group,n,coverage,avg_set_size,singleton_rate
+contrast,high,17,1.0,1.0,1.0
+contrast,low,14,1.0,1.0,1.0
+contrast,medium,28,0.8928571428571429,1.0,1.0

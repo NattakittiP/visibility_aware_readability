@@ -1,0 +1,48 @@
+\begin{table}[t]
+\centering
+\caption{Repeated stratified CV performance (mean [95\% CI]) across splits.}
+\label{tab:repeated_cv}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcccccccccc}
+\toprule
+Model & AUC & AP & BRIER & ECE & ACC & BACC & F1 & PREC & REC & MCC \\
+\midrule
+LR(isotonic) & 0.983 [0.983, 0.984] & 0.980 [0.979, 0.981] & 0.050 [0.049, 0.051] & 0.069 [0.068, 0.070] & 0.930 [0.928, 0.932] & 0.928 [0.926, 0.930] & 0.919 [0.917, 0.922] & 0.932 [0.930, 0.935] & 0.910 [0.907, 0.913] & 0.860 [0.856, 0.864] \\
+RF(isotonic) & 0.975 [0.973, 0.976] & 0.965 [0.963, 0.967] & 0.055 [0.054, 0.056] & 0.077 [0.076, 0.078] & 0.927 [0.926, 0.929] & 0.926 [0.924, 0.928] & 0.917 [0.915, 0.919] & 0.921 [0.918, 0.924] & 0.917 [0.914, 0.920] & 0.855 [0.852, 0.859] \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+
+
+\begin{table}[t]
+\centering
+\caption{Condition-blocked CV performance (mean [95\% CI]). Entire viewing-condition groups are held out.}
+\label{tab:blocked_cv}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcccccccccc}
+\toprule
+Model & AUC & AP & BRIER & ECE & ACC & BACC & F1 & PREC & REC & MCC \\
+\midrule
+LR(isotonic) & 0.983 [0.975, 0.991] & 0.971 [0.956, 0.986] & 0.051 [0.032, 0.075] & 0.064 [0.033, 0.095] & 0.933 [0.897, 0.963] & 0.922 [0.887, 0.944] & 0.919 [0.876, 0.947] & 0.954 [0.927, 0.979] & 0.893 [0.808, 0.964] & 0.860 [0.799, 0.906] \\
+RF(isotonic) & 0.976 [0.955, 0.989] & 0.967 [0.943, 0.986] & 0.058 [0.035, 0.082] & 0.076 [0.052, 0.100] & 0.920 [0.883, 0.953] & 0.908 [0.884, 0.932] & 0.907 [0.874, 0.940] & 0.936 [0.904, 0.968] & 0.887 [0.814, 0.964] & 0.836 [0.778, 0.893] \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+
+
+\begin{table}[t]
+\centering
+\caption{Ablation study (LR, repeated CV): mean [95\% CI].}
+\label{tab:ablation}
+\begin{tabular}{lcccccc}
+\toprule
+Features & AUC & AP & BRIER & ECE & BACC & F1 \\
+\midrule
+Geometry-only & 0.816 [0.813, 0.819] & 0.748 [0.743, 0.752] & 0.177 [0.175, 0.178] & 0.153 [0.151, 0.155] & 0.714 [0.711, 0.718] & 0.672 [0.668, 0.677] \\
+Visibility-only & 0.987 [0.986, 0.987] & 0.980 [0.979, 0.981] & 0.046 [0.045, 0.047] & 0.055 [0.054, 0.057] & 0.918 [0.916, 0.920] & 0.908 [0.906, 0.910] \\
+Visibility+Geometry & 0.983 [0.983, 0.984] & 0.980 [0.979, 0.981] & 0.050 [0.049, 0.051] & 0.069 [0.068, 0.070] & 0.928 [0.926, 0.930] & 0.919 [0.917, 0.922] \\
+\bottomrule
+\end{tabular}
+\end{table}
