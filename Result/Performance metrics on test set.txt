@@ -1,0 +1,8 @@
+=== Performance metrics on test set ===
+                 model  accuracy  precision    recall        f1       auc  \
+0  Logistic Regression  0.893333   0.903226  0.848485  0.875000  0.962482   
+1        Random Forest  0.893333   0.931034  0.818182  0.870968  0.955628   
+
+         ap     brier  
+0  0.956413  0.080794  
+1  0.956005  0.082922

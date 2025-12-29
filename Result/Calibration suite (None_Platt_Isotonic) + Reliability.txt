@@ -1,0 +1,8 @@
+==============================
+B) Calibration suite (None/Platt/Isotonic) + Reliability
+==============================
+Calibration summary (name, AUC, Brier, ECE):
+('none', np.float64(0.9858405483405484), np.float64(0.04934320135692882), 0.047949354560042234)
+('platt', np.float64(0.9847132034632035), np.float64(0.05199634397272396), 0.050087017105235866)
+('isotonic', np.float64(0.9844200937950938), np.float64(0.04703922582830425), 0.03033140439337)
+Chosen best-by-ECE: isotonic

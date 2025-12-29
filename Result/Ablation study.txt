@@ -1,0 +1,50 @@
+######## Ablation study ########
+
+================================================================================
+Ablation setting: RF_geometry_only
+Numeric features    : ['distance_m', 'font_size_pt', 'text_height_mm', 'angular_size_deg', 'head_yaw_deg', 'head_pitch_deg', 'head_roll_deg']
+Categorical features: ['medium', 'contrast']
+
+===== RF_geometry_only =====
+Accuracy       : 0.693
+Precision      : 0.708
+Recall         : 0.515
+F1-score       : 0.596
+ROC AUC        : 0.735
+PR AUC (AP)    : 0.699
+Brier score    : 0.215
+
+================================================================================
+Ablation setting: RF_visibility_only
+Numeric features    : ['visibility_score']
+Categorical features: []
+
+===== RF_visibility_only =====
+Accuracy       : 0.893
+Precision      : 0.931
+Recall         : 0.818
+F1-score       : 0.871
+ROC AUC        : 0.984
+PR AUC (AP)    : 0.979
+Brier score    : 0.071
+
+================================================================================
+Ablation setting: RF_visibility_plus_geometry
+Numeric features    : ['distance_m', 'font_size_pt', 'text_height_mm', 'angular_size_deg', 'head_yaw_deg', 'head_pitch_deg', 'head_roll_deg', 'visibility_score']
+Categorical features: ['medium', 'contrast']
+
+===== RF_visibility_plus_geometry =====
+Accuracy       : 0.893
+Precision      : 0.931
+Recall         : 0.818
+F1-score       : 0.871
+ROC AUC        : 0.956
+PR AUC (AP)    : 0.955
+Brier score    : 0.085
+
+================================================================================
+Ablation summary (Random Forest)
+
+RF_geometry_only             | AUC=0.735 | Brier=0.215 | Acc=0.693 | F1=0.596
+RF_visibility_only           | AUC=0.984 | Brier=0.071 | Acc=0.893 | F1=0.871
+RF_visibility_plus_geometry  | AUC=0.956 | Brier=0.085 | Acc=0.893 | F1=0.871

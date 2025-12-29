@@ -1,0 +1,5 @@
+===== Logistic Regression Bootstrap Results =====
+{'acc_mean': np.float64(0.8439900000000001), 'acc_CI': array([0.76666667, 0.91111111]), 'f1_mean': np.float64(0.8027458507769212), 'f1_CI': array([0.69333333, 0.8974359 ]), 'precision_mean': np.float64(0.905765917489309), 'precision_CI': array([0.79310345, 1.        ]), 'recall_mean': np.float64(0.7243871587382611), 'recall_CI': array([0.58139535, 0.85714286]), 'auc_mean': np.float64(0.9315139550719438), 'auc_CI': array([0.8755722 , 0.97430862]), 'brier_mean': np.float64(0.10932119699059371), 'brier_CI': array([0.07419611, 0.1484964 ])}
+
+===== Random Forest Bootstrap Results =====
+{'acc_mean': np.float64(0.910748888888889), 'acc_CI': array([0.84444444, 0.96666667]), 'f1_mean': np.float64(0.8869906574641571), 'f1_CI': array([0.8       , 0.95774648]), 'precision_mean': np.float64(1.0), 'precision_CI': array([1., 1.]), 'recall_mean': np.float64(0.7992539780141182), 'recall_CI': array([0.66666667, 0.91891892]), 'auc_mean': np.float64(0.9530858928098475), 'auc_CI': array([0.90475012, 0.98911484]), 'brier_mean': np.float64(0.0833034117160494), 'brier_CI': array([0.04825615, 0.12514983])}

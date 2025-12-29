@@ -1,0 +1,231 @@
+######## Group-by-participant analysis ########
+
+================================================================================
+Leave-one-participant-out fold: participant 0
+===== RF (participant 0 held out) =====
+Accuracy       : 0.933
+Precision      : 0.833
+Recall         : 1.000
+F1-score       : 0.909
+ROC AUC        : 0.980
+PR AUC (AP)    : 0.967
+Brier score    : 0.074
+
+================================================================================
+Leave-one-participant-out fold: participant 1
+===== RF (participant 1 held out) =====
+Accuracy       : 0.933
+Precision      : 0.909
+Recall         : 1.000
+F1-score       : 0.952
+ROC AUC        : 1.000
+PR AUC (AP)    : 1.000
+Brier score    : 0.042
+
+================================================================================
+Leave-one-participant-out fold: participant 2
+===== RF (participant 2 held out) =====
+Accuracy       : 1.000
+Precision      : 1.000
+Recall         : 1.000
+F1-score       : 1.000
+ROC AUC        : 1.000
+PR AUC (AP)    : 1.000
+Brier score    : 0.013
+
+================================================================================
+Leave-one-participant-out fold: participant 3
+===== RF (participant 3 held out) =====
+Accuracy       : 0.800
+Precision      : 0.600
+Recall         : 0.750
+F1-score       : 0.667
+ROC AUC        : 0.955
+PR AUC (AP)    : 0.917
+Brier score    : 0.100
+
+================================================================================
+Leave-one-participant-out fold: participant 4
+===== RF (participant 4 held out) =====
+Accuracy       : 1.000
+Precision      : 1.000
+Recall         : 1.000
+F1-score       : 1.000
+ROC AUC        : 1.000
+PR AUC (AP)    : 1.000
+Brier score    : 0.046
+
+================================================================================
+Leave-one-participant-out fold: participant 5
+===== RF (participant 5 held out) =====
+Accuracy       : 0.933
+Precision      : 0.889
+Recall         : 1.000
+F1-score       : 0.941
+ROC AUC        : 1.000
+PR AUC (AP)    : 1.000
+Brier score    : 0.027
+
+================================================================================
+Leave-one-participant-out fold: participant 6
+===== RF (participant 6 held out) =====
+Accuracy       : 0.933
+Precision      : 1.000
+Recall         : 0.875
+F1-score       : 0.933
+ROC AUC        : 0.964
+PR AUC (AP)    : 0.975
+Brier score    : 0.076
+
+================================================================================
+Leave-one-participant-out fold: participant 7
+===== RF (participant 7 held out) =====
+Accuracy       : 1.000
+Precision      : 1.000
+Recall         : 1.000
+F1-score       : 1.000
+ROC AUC        : 1.000
+PR AUC (AP)    : 1.000
+Brier score    : 0.015
+
+================================================================================
+Leave-one-participant-out fold: participant 8
+===== RF (participant 8 held out) =====
+Accuracy       : 0.867
+Precision      : 0.857
+Recall         : 0.857
+F1-score       : 0.857
+ROC AUC        : 0.982
+PR AUC (AP)    : 0.982
+Brier score    : 0.070
+
+================================================================================
+Leave-one-participant-out fold: participant 9
+===== RF (participant 9 held out) =====
+Accuracy       : 0.933
+Precision      : 0.800
+Recall         : 1.000
+F1-score       : 0.889
+ROC AUC        : 1.000
+PR AUC (AP)    : 1.000
+Brier score    : 0.034
+
+================================================================================
+Leave-one-participant-out fold: participant 10
+===== RF (participant 10 held out) =====
+Accuracy       : 0.933
+Precision      : 1.000
+Recall         : 0.889
+F1-score       : 0.941
+ROC AUC        : 1.000
+PR AUC (AP)    : 1.000
+Brier score    : 0.053
+
+================================================================================
+Leave-one-participant-out fold: participant 11
+===== RF (participant 11 held out) =====
+Accuracy       : 0.867
+Precision      : 1.000
+Recall         : 0.714
+F1-score       : 0.833
+ROC AUC        : 0.946
+PR AUC (AP)    : 0.948
+Brier score    : 0.092
+
+================================================================================
+Leave-one-participant-out fold: participant 12
+===== RF (participant 12 held out) =====
+Accuracy       : 1.000
+Precision      : 1.000
+Recall         : 1.000
+F1-score       : 1.000
+ROC AUC        : 1.000
+PR AUC (AP)    : 1.000
+Brier score    : 0.033
+
+================================================================================
+Leave-one-participant-out fold: participant 13
+===== RF (participant 13 held out) =====
+Accuracy       : 0.867
+Precision      : 1.000
+Recall         : 0.714
+F1-score       : 0.833
+ROC AUC        : 1.000
+PR AUC (AP)    : 1.000
+Brier score    : 0.058
+
+================================================================================
+Leave-one-participant-out fold: participant 14
+===== RF (participant 14 held out) =====
+Accuracy       : 0.933
+Precision      : 1.000
+Recall         : 0.800
+F1-score       : 0.889
+ROC AUC        : 0.880
+PR AUC (AP)    : 0.891
+Brier score    : 0.087
+
+================================================================================
+Leave-one-participant-out fold: participant 15
+===== RF (participant 15 held out) =====
+Accuracy       : 1.000
+Precision      : 1.000
+Recall         : 1.000
+F1-score       : 1.000
+ROC AUC        : 1.000
+PR AUC (AP)    : 1.000
+Brier score    : 0.009
+
+================================================================================
+Leave-one-participant-out fold: participant 16
+===== RF (participant 16 held out) =====
+Accuracy       : 0.800
+Precision      : 0.800
+Recall         : 0.667
+F1-score       : 0.727
+ROC AUC        : 0.963
+PR AUC (AP)    : 0.948
+Brier score    : 0.107
+
+================================================================================
+Leave-one-participant-out fold: participant 17
+===== RF (participant 17 held out) =====
+Accuracy       : 1.000
+Precision      : 1.000
+Recall         : 1.000
+F1-score       : 1.000
+ROC AUC        : 1.000
+PR AUC (AP)    : 1.000
+Brier score    : 0.053
+
+================================================================================
+Leave-one-participant-out fold: participant 18
+===== RF (participant 18 held out) =====
+Accuracy       : 0.933
+Precision      : 0.900
+Recall         : 1.000
+F1-score       : 0.947
+ROC AUC        : 0.944
+PR AUC (AP)    : 0.963
+Brier score    : 0.073
+
+================================================================================
+Leave-one-participant-out fold: participant 19
+===== RF (participant 19 held out) =====
+Accuracy       : 1.000
+Precision      : 1.000
+Recall         : 1.000
+F1-score       : 1.000
+ROC AUC        : 1.000
+PR AUC (AP)    : 1.000
+Brier score    : 0.035
+
+================================================================================
+Group-by-participant summary (Random Forest)
+ACC       : mean=0.933, std=0.063
+PREC      : mean=0.929, std=0.105
+REC       : mean=0.913, std=0.117
+F1        : mean=0.916, std=0.092
+AUC       : mean=0.981, std=0.030
+AP        : mean=0.980, std=0.031
+BRIER     : mean=0.055, std=0.029

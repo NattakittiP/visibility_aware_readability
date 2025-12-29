@@ -1,0 +1,16 @@
+Tree-based feature importances (top 20):
+             feature  importance
+7   visibility_score    0.499233
+6   angular_size_deg    0.115566
+1       font_size_pt    0.090864
+2     text_height_mm    0.083794
+3       head_yaw_deg    0.055012
+4     head_pitch_deg    0.045738
+0         distance_m    0.042637
+5      head_roll_deg    0.039987
+11     contrast_high    0.006381
+12      contrast_low    0.005385
+8     medium_monitor    0.004447
+9       medium_paper    0.003881
+13   contrast_medium    0.003573
+10  medium_projector    0.003501
