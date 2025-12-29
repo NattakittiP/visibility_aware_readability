@@ -1,20 +1,69 @@
-# ============================================================
-# ✅ MAIN (recommended for paper):
-#   - Repeated Stratified CV (uncertainty) for LR(isotonic), RF(isotonic)
-#   - Condition-blocked CV (deployment shift) for LR(isotonic), RF(isotonic)
-#   - Ablation (LR): Geometry-only / Visibility-only / Combined
-#   - Calibration quality: Brier + ECE (+ optional reliability plots)
-#   - Subgroup + worst-case reporting (contrast/medium/dist_bin/ang_bin)
-#   - Mondrian conformal by subgroup (coverage per group) — deployment-style split by condition_group
-#   - Robustness stress tests (bias/clipping/quantization)
-#   - Cross-fitted residual sufficiency test
-#   - CMI-lite
-#
-# ✅ PAPER OUTPUTS:
-#   - CSVs under ./outputs
-#   - LaTeX tables under ./outputs/tables_IEEE.tex (ready to paste)
-# ============================================================
+"""
+This version implements:
+1) A paper-ready, end-to-end evaluation pipeline for perceptual visibility modeling,
+   explicitly designed to support uncertainty estimation, deployment realism,
+   and sufficiency claims.
+2) Two primary cross-validation regimes for core results:
+   - Repeated Stratified CV (distributional uncertainty across random splits).
+   - Condition-blocked CV, holding out entire viewing-condition groups to simulate deployment shift.
+3) Calibrated probabilistic modeling for both Logistic Regression and Random Forest,
+   using isotonic regression as the default paper setting.
+4) A focused ablation study (Logistic Regression only) comparing:
+   - Geometry + head-pose features.
+   - Visibility-only features.
+   - Combined visibility + geometry features.
+5) A comprehensive metric suite evaluated per split, including:
+   AUROC, Average Precision, Brier score, ECE, accuracy, balanced accuracy,
+   F1, precision, recall, and MCC.
+6) Bootstrap-based confidence intervals over CV splits,
+   enabling statistically grounded reporting of mean performance.
+7) Automatic generation of publication-ready LaTeX tables
+   (IEEE style, booktabs-compatible) summarizing:
+   - Repeated CV results.
+   - Condition-blocked CV results.
+   - Ablation results.
+8) Calibration quality analysis with reliability diagrams
+   based on full-data fits for descriptive assessment.
+9) Subgroup and worst-case performance reporting across:
+   medium, contrast, distance bins, and angular-size bins,
+   highlighting potential failure modes.
+10) Mondrian conformal prediction by subgroup,
+    producing group-conditional coverage, efficiency, and singleton rates
+    under deployment-style splits.
+11) Structured robustness stress tests targeting realistic perturbations:
+    visibility bias, visibility clipping, and head-pose quantization,
+    with AUC degradation curves.
+12) A cross-fitted residual sufficiency test to assess whether
+    geometry and head-pose explain residual signal beyond visibility,
+    including permutation-based p-values.
+13) A lightweight conditional mutual information (CMI-lite) analysis
+    to further probe conditional dependence beyond visibility bins.
+14) Extensive progress logging with stage-level timing summaries,
+    supporting reproducibility and computational transparency.
+15) A clear separation between “quick” and “final” modes,
+    allowing fast sanity checks or full paper-scale execution.
 
+Outputs:
+- main_repeated_cv_splits.csv
+- main_blocked_cv_splits.csv
+- main_ablation_lr_repeated_cv.csv
+- table_repeated_cv_summary.csv
+- table_blocked_cv_summary.csv
+- table_ablation_summary.csv
+- tables_IEEE.tex
+- fig_auc_distribution_repeated_cv.png
+- reliability_LR_isotonic_full.png
+- subgroup_medium.csv
+- subgroup_contrast.csv
+- subgroup_distbin.csv
+- subgroup_angbin.csv
+- subgroup_worst_case.csv
+- mondrian_conformal_contrast.csv
+- robustness_structured.csv
+- fig_robustness_auc.png
+- crossfit_residual_test.csv
+- cmi_lite_results.csv
+"""
 import os
 import time
 import warnings
