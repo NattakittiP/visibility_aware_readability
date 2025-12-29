@@ -167,7 +167,7 @@ python thms_pipeline.py
 ### `thms_full.py`
 
 A Colab-oriented version of the full pipeline with identical scientific intent.
-This script is intended for cloud execution and one-click reproducibility.
+This script is intended for cloud execution and reproducibility.
   
 ---
 
