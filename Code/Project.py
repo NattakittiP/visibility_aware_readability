@@ -1,3 +1,59 @@
+"""
+This version implements:
+1) A comprehensive perceptual sufficiency evaluation framework combining
+   group-aware cross-validation, statistical testing, calibration analysis,
+   robustness checks, and causal-style stress tests.
+2) Group-aware out-of-fold (OOF) evaluation using:
+   - StratifiedKFold for standard pooled analysis.
+   - GroupKFold (Leave-One-Participant-Out style) for subject-level generalization.
+3) Multiple feature-set comparisons aligned with the core sufficiency claim:
+   - Visibility-only features.
+   - Geometry + head-pose (no visibility).
+   - Full feature set (geometry + head-pose + visibility + context).
+4) Paired DeLong tests on pooled OOF predictions to statistically compare AUROC
+   between feature sets (e.g., Full vs Visibility-only).
+5) Bootstrap confidence intervals for all major metrics
+   (AUROC, AP, Brier, accuracy, F1, precision, recall, ECE),
+   computed on pooled OOF predictions.
+6) A calibration suite evaluating:
+   - No calibration.
+   - Platt scaling.
+   - Isotonic regression,
+   with Expected Calibration Error (ECE) and reliability diagrams.
+7) Decision Curve Analysis (DCA) to assess clinical / policy-level utility
+   via net benefit across threshold probabilities.
+8) Robustness analysis under controlled perturbations:
+   - Additive feature noise (visibility and head-pose channels).
+   - Label noise via random label flips.
+   Quantifying performance degradation as noise increases.
+9) Conformal prediction for classification, producing prediction sets
+   with formal coverage guarantees, along with efficiency metrics
+   (average set size and singleton rate).
+10) Information-theoretic support using mutual information ranking
+    to contextualize feature relevance.
+11) A hard sufficiency stress test via residualization:
+    - Regress outcome on visibility.
+    - Test whether geometry/head-pose explains residual variance.
+    - Quantify explained variance (R²) and permutation-based p-values.
+12) Counterfactual-style analysis estimating the minimal change in visibility
+    required to flip the model’s predicted decision for individual samples.
+13) Unified preprocessing with imputation, scaling, and one-hot encoding,
+    shared consistently across all evaluation modules.
+14) Reproducible experiment control through fixed random seeds
+    and deterministic data splits.
+
+Outputs:
+- Console summaries of fold-level and pooled OOF metrics.
+- DeLong paired AUC test results between feature sets.
+- Bootstrap confidence interval tables for all evaluated metrics.
+- Reliability diagrams comparing calibration strategies.
+- Decision curve plots showing net benefit across thresholds.
+- Robustness curves under feature and label noise.
+- Conformal prediction coverage and efficiency statistics.
+- Mutual information rankings and plots.
+- Residualization test statistics and permutation results.
+- Counterfactual visibility-change examples per sample.
+"""
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -432,4 +488,5 @@ plt.show()
 # ============================================================
 # END
 # ============================================================
+
 
