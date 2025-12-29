@@ -1,3 +1,40 @@
+"""
+This version implements:
+1) An ablation-study framework to quantify the contribution of different feature groups
+   (geometry-only, visibility-only, and visibility + geometry) to model performance.
+2) A unified preprocessing pipeline with:
+   - Standardization for numerical features.
+   - One-hot encoding for categorical features with unknown handling.
+3) A Random Forest classifier with class-balancing,
+   used consistently across all ablation configurations for fair comparison.
+4) Comprehensive evaluation metrics on a held-out test split:
+   accuracy, precision, recall, F1 score, AUROC, average precision (AP),
+   and Brier score.
+5) Clear console reporting of metrics for each ablation setting,
+   enabling transparent inspection of performance trade-offs.
+6) Visualization of ablation results via bar plots comparing:
+   - AUROC (discrimination).
+   - Brier score (calibration / probabilistic accuracy).
+   - F1 score (classification balance).
+7) Semi-random assignment of samples to participant IDs,
+   ensuring approximately balanced group sizes.
+8) A Leave-One-Participant-Out (LOPO) evaluation protocol to assess
+   subject-level generalization and robustness.
+9) Per-participant model training and testing,
+   with full metric reporting for each held-out participant.
+10) Visualization of participant-level variability through:
+    - Line plots of AUROC per participant.
+    - Boxplots summarizing the distribution of key metrics across participants.
+11) A clean separation between ablation analysis and participant-level analysis,
+    supporting both feature-importance insight and generalization assessment.
+
+Outputs:
+- Console logs of ablation metrics for each feature configuration.
+- Ablation comparison plots (AUROC, Brier score, F1 score).
+- Per-participant metric table from Leave-One-Participant-Out evaluation.
+- Participant-level plots showing AUROC trends and metric distributions.
+"""
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -209,4 +246,5 @@ plot_ablation(ab_results)
 print("\n### Running Leave-One-Participant-Out ###")
 df_p = assign_participants(df)
 lop_results = run_group_by_participant(df_p)
+
 plot_groupby(lop_results)
