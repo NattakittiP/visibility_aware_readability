@@ -1,4 +1,52 @@
+"""
+This version implements:
+1) An end-to-end exploratory and modeling pipeline for the reading–visibility task,
+   combining data visualization, supervised learning, evaluation, and interpretability.
+2) Dataset inspection and type enforcement, ensuring correct numeric and categorical
+   representations for downstream analysis.
+3) Correlation analysis across numeric features and categorical dummies,
+   visualized as a high-resolution heatmap for global dependency inspection.
+4) Rich exploratory visualizations, including:
+   - Multiple 2D scatter plots of geometric and head-pose variables versus visibility.
+   - 3D scatter plots illustrating interactions among distance, angular size,
+     font size, visibility, and reading outcome.
+5) A unified preprocessing pipeline with:
+   - Median imputation and standardization for numeric features.
+   - Most-frequent imputation and one-hot encoding for categorical features.
+6) Stratified train–test splitting to preserve class balance in evaluation.
+7) Supervised model training using two complementary model classes:
+   - Logistic Regression (interpretable baseline).
+   - Random Forest (nonlinear, interaction-aware model).
+8) Comprehensive test-set evaluation with multiple metrics:
+   accuracy, precision, recall, F1 score, AUROC, average precision, and Brier score.
+9) ROC curve visualization comparing models against a random baseline.
+10) Confusion-matrix visualization for each model,
+    exported as publication-quality figures.
+11) Calibration analysis using reliability curves,
+    assessing probabilistic correctness of the Random Forest model.
+12) Model interpretability via feature importance analysis:
+    - Native tree-based feature importances.
+    - Permutation importance with uncertainty (mean ± std).
+13) Partial Dependence Plots (PDPs) for key features,
+    including both 1D marginal effects and 2D interaction surfaces.
+14) Consistent figure export (PNG, high DPI) suitable for reports, slides, or papers.
+15) Reproducible experiment control through fixed random seeds and deterministic splits.
 
+Outputs:
+- fig_corr_heatmap.png
+- fig_scatter_vs_visibility.png
+- fig_3d_visibility.png
+- fig_3d_cheating.png
+- fig_roc.png
+- metrics_summary.csv
+- fig_confusion_logistic_regression.png
+- fig_confusion_random_forest.png
+- fig_calibration_rf.png
+- fig_feature_importance.png
+- fig_permutation_importance.png
+- fig_pdp_1d.png
+- fig_pdp_2d.png
+"""
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -433,6 +481,7 @@ plt.show()
 # ============================================================
 # END
 # ============================================================
+
 
 
 
