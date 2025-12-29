@@ -139,7 +139,7 @@ All scripts expect a CSV file named: `reading_visibility_dataset_300rows.csv`
 
 ## Installation
 
-### Minimal (Recommended)
+### Install Recommend
 `pip install -U numpy pandas scikit-learn scipy matplotlib tqdm seaborn`
 
 
