@@ -1,15 +1,57 @@
-# ============================================================
-# THMS Q1-Grade Reproducible Pipeline (Google Colab)
-# - NO access to original/raw dataset required (uses provided CSV)
-# - Avoids pseudo-participant claims; uses condition-blocked evaluation
-# - Provides: repeated CV + OOF pooling, DeLong paired AUC test,
-#             calibration (none/platt/isotonic), ablation,
-#             cross-fitted residual sufficiency (properly out-of-sample),
-#             subgroup stress tests, conformal prediction,
-#             robustness (structured perturbations)
-# ============================================================
+"""
+This version implements:
+1) A fully reproducible, THMS Q1–grade evaluation pipeline designed for Google Colab,
+   requiring only the provided CSV and no access to raw or proprietary datasets.
+2) Strict avoidance of pseudo-participant assumptions by using
+   condition-blocked evaluation as a proxy for deployment shift.
+3) Two primary evaluation regimes for core claims:
+   - Repeated stratified cross-validation with pooled out-of-fold (OOF) predictions
+     for uncertainty estimation and robust statistics.
+   - Condition-blocked cross-validation, holding out entire viewing-condition groups.
+4) Calibrated probabilistic modeling for Logistic Regression and Random Forest,
+   supporting no calibration, Platt scaling, and isotonic regression
+   (isotonic used for main results).
+5) A comprehensive metric suite including AUROC, Average Precision, Brier score,
+   ECE, accuracy, balanced accuracy, F1, precision, recall, and MCC.
+6) Pooled-OOF calibration analysis with reliability diagrams
+   for both Logistic Regression and Random Forest.
+7) An ablation study (Logistic Regression) comparing:
+   - Visibility-only features.
+   - Geometry + head-pose (+ categorical context).
+   - Full feature set (visibility + geometry).
+8) Formal paired statistical comparison using a fast DeLong test
+   on pooled OOF predictions (visibility-only vs full model).
+9) A properly cross-fitted residual sufficiency test assessing whether
+   geometry and head-pose explain out-of-sample residual signal beyond visibility.
+10) Split conformal prediction for classification, reporting coverage,
+    average set size, and singleton rate.
+11) Mondrian conformal prediction by subgroup (e.g., contrast),
+    yielding group-conditional coverage diagnostics.
+12) Structured robustness stress tests simulating realistic perturbations:
+    visibility clipping, visibility bias, and head-pose quantization.
+13) Lightweight visualization of robustness effects via AUC degradation curves.
+14) Deterministic experiment control via fixed random seeds
+    and explicit configuration blocks for transparency.
+15) Clean, auditable output organization suitable for reviewer inspection.
 
-# If running in Colab, uncomment:
+Outputs:
+- main_repeated_cv_lr_splits.csv
+- main_repeated_cv_rf_splits.csv
+- reliability_LR_isotonic_pooledOOF.png
+- reliability_RF_isotonic_pooledOOF.png
+- main_blocked_cv_lr.csv
+- main_blocked_cv_rf.csv
+- ablation_rep_full_lr.csv
+- ablation_rep_vis_lr.csv
+- ablation_rep_geom_lr.csv
+- delong_vis_vs_full.csv
+- residual_sufficiency_proper.csv
+- conformal_summary.csv
+- conformal_test_rows.csv
+- mondrian_conformal_contrast.csv
+- robustness_structured_lr.csv
+- fig_robustness_auc.png
+"""
 # !pip -q install numpy pandas scikit-learn scipy matplotlib tqdm
 
 import os
